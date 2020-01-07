@@ -1,3 +1,6 @@
+# Latest deployment status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c5336cb1-031f-4fc2-b9d8-26ab2822f20f/deploy-status)](https://app.netlify.com/sites/musing-blackwell-9d2e4e/deploys)
+
 # Gatsby Portfolio Website
 
 This repo contains a static website written with [GatsbyJS](https://www.gatsbyjs.org/), integrated with content coming from [DatoCMS](https://www.datocms.com).
