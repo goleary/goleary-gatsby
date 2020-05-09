@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
-    title: `Gabe O'Leary`
+    title: `Gabe O'Leary`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,8 +11,14 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: process.env.DATO_API_TOKEN
-      }
-    }
-  ]
+        apiToken: process.env.DATO_API_TOKEN,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-165977347-1",
+      },
+    },
+  ],
 };
