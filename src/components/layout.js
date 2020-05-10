@@ -41,7 +41,7 @@ const TemplateWrapper = ({ children }) => {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <div className={`container ${showMenu ? "is-open" : ""}`}>
           <HelmetDatoCms
             favicon={data.datoCmsSite.faviconMetaTags}
@@ -56,12 +56,15 @@ const TemplateWrapper = ({ children }) => {
                 className="sidebar__intro"
                 dangerouslySetInnerHTML={{
                   __html:
-                    data.datoCmsHome.introTextNode.childMarkdownRemark.html
+                    data.datoCmsHome.introTextNode.childMarkdownRemark.html,
                 }}
               />
               <ul className="sidebar__menu">
                 <li>
                   <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/posts">Posts</Link>
                 </li>
                 <li>
                   <Link to="/about">About</Link>
@@ -87,13 +90,16 @@ const TemplateWrapper = ({ children }) => {
           <div className="container__body">
             <div className="container__mobile-header">
               <div className="mobile-header">
-                <div className="mobile-header__menu" onClick={e => {
-                      e.preventDefault();
-                      setShowMenu(!showMenu);
-                    }}>
+                <div
+                  className="mobile-header__menu"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowMenu(!showMenu);
+                  }}
+                >
                   <a
                     href="#"
-                    onClick={e => {
+                    onClick={(e) => {
                       e.preventDefault();
                       setShowMenu(!showMenu);
                     }}
@@ -113,7 +119,7 @@ const TemplateWrapper = ({ children }) => {
 };
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.object,
 };
 
 export default TemplateWrapper;
