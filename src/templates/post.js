@@ -9,10 +9,12 @@ export default ({ data }) => (
     <article className="sheet">
       <HelmetDatoCms seo={data.datoCmsPost.seoMetaTags} />
       <div className="sheet__gallery">
-        <Img
-          fluid={data.datoCmsPost.coverImage.fluid}
-          style={{ margin: "auto", width: 400 }}
-        />
+        {data.datoCmsPost.coverImage && data.datoCmsPost.coverImage.fuil && (
+          <Img
+            fluid={data.datoCmsPost.coverImage.fluid}
+            style={{ margin: "auto", width: 400 }}
+          />
+        )}
       </div>
       <div className="sheet__inner">
         <h1 className="sheet__title">{data.datoCmsPost.title}</h1>
