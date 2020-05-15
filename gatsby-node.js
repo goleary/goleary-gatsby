@@ -1,6 +1,17 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+// this should be shared from `./src/utils` but the disparate module types is proving annoying.
+
+const getUniqueTagsFromPosts = (posts) => [
+  ...new Set(
+    posts
+      .map(({ tags }) => tags)
+      .flat()
+      .filter((tag) => tag !== null)
+  ),
+];
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -16,6 +27,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
         allDatoCmsPost {
           nodes {
+            tags
             title
             tags
             slug
@@ -38,6 +50,16 @@ exports.createPages = ({ graphql, actions }) => {
           component: path.resolve(`./src/templates/post.js`),
           context: {
             slug: post.slug,
+          },
+        });
+      });
+
+      getUniqueTagsFromPosts(result.data.allDatoCmsPost.nodes).map((tag) => {
+        createPage({
+          path: `tags/${tag}`,
+          component: path.resolve(`./src/templates/tag.js`),
+          context: {
+            tag,
           },
         });
       });

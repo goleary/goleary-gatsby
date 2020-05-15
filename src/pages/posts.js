@@ -1,21 +1,36 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
-import { timeParse, timeFormat } from "d3-time-format";
 
-const format = (date) => timeFormat("%b %e, %Y")(timeParse("%Y-%m-%d")(date));
+import { formatDate } from "../utils";
+import styles from "./posts.module.scss";
 const PostsPage = ({ data }) => (
   <Layout>
     <article className="sheet">
       <div className="sheet__inner">
         <h1 className="sheet__title">Posts</h1>
-        {data.allDatoCmsPost.nodes.map((post) => (
-          <>
-            <Link to={`/posts/${post.slug}`}>{post.title}</Link>{" "}
-            <span className="post-date">{format(post.date)}</span>
-            <div>{post.contentNode.childMarkdownRemark.excerpt} </div>
-          </>
-        ))}
+        {data.allDatoCmsPost.nodes.map(
+          ({ title, slug, date, contentNode, tags }) => (
+            <>
+              <Link to={`/posts/${slug}`}>{title}</Link>{" "}
+              <span className="post-date">{formatDate(date)}</span>
+              <div>{contentNode.childMarkdownRemark.excerpt} </div>
+              <div className={styles.tagContainer}>
+                {tags && (
+                  <>
+                    tags:{" "}
+                    {tags.map((tag, i) => (
+                      <>
+                        <Link to={`/tags/${tag}`}>{tag}</Link>
+                        {i < tags.length - 1 && ", "}
+                      </>
+                    ))}
+                  </>
+                )}
+              </div>
+            </>
+          )
+        )}
       </div>
     </article>
   </Layout>
@@ -23,9 +38,12 @@ const PostsPage = ({ data }) => (
 
 export default PostsPage;
 
+// filter to use on prod version of the site:
+// allDatoCmsPost(filter: { published: { eq: true } }) {
+
 export const query = graphql`
   {
-    allDatoCmsPost(filter: { published: { eq: true } }) {
+    allDatoCmsPost {
       nodes {
         title
         date
