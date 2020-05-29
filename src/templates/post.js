@@ -3,8 +3,13 @@ import { HelmetDatoCms } from "gatsby-source-datocms";
 import { graphql } from "gatsby";
 import { DiscussionEmbed } from "disqus-react";
 
-import Layout from "../components/layout";
 import Img from "gatsby-image";
+
+import Layout from "../components/layout";
+
+import { formatDate } from "../utils/";
+
+import styles from "./post.module.scss";
 
 export default ({ data }) => {
   const disqusConfig = {
@@ -28,6 +33,7 @@ export default ({ data }) => {
         </div>
         <div className="sheet__inner">
           <h1 className="sheet__title">{data.datoCmsPost.title}</h1>
+          <h3 className={styles.date}>{formatDate(data.datoCmsPost.date)}</h3>
         </div>
         <div
           className="sheet__body"
@@ -49,6 +55,7 @@ export const query = graphql`
         ...GatsbyDatoCmsSeoMetaTags
       }
       title
+      date
       coverImage {
         url
         fluid(maxWidth: 400, imgixParams: { fm: "jpg", auto: "compress" }) {

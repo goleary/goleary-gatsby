@@ -4,7 +4,9 @@ import { Link } from "gatsby";
 import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
 
+// TODO: get rid of these dismal .sass files
 import "../styles/index.sass";
+import "../styles/index.scss";
 
 const TemplateWrapper = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
