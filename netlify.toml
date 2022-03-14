@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/current-map"
+  from = "/current-map/*"
   to = "https://current-map.netlify.app/"
   status = 200
