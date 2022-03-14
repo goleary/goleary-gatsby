@@ -20,12 +20,5 @@ module.exports = {
         trackingId: "UA-165977347-1",
       },
     },
-    {
-      resolve: "gatsby-plugin-copy-files",
-      options: {
-        source: `/_redirects`,
-        destination: "public",
-      },
-    },
   ],
 };
