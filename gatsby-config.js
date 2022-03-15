@@ -20,5 +20,12 @@ module.exports = {
         trackingId: "UA-165977347-1",
       },
     },
+    {
+      resolve: `gatsby-plugin-splitbee`,
+      options: {
+        includeInDevelopment: false,
+        delayTimeout: 0,
+      },
+    },
   ],
 };
