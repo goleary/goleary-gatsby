@@ -1,5 +1,5 @@
 import splitbee from "@splitbee/web";
 
-exports.onClientEntry = () => {
+export const onClientEntry = () => {
   splitbee.init();
 };
