@@ -5218,13 +5218,6 @@ gatsby-plugin-sass@^2.1.24:
     "@babel/runtime" "^7.7.6"
     sass-loader "^7.3.1"
 
-gatsby-plugin-splitbee@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-splitbee/-/gatsby-plugin-splitbee-0.2.0.tgz#4d8a1e6e78ae7d64bdca2e71194cb94e42792ed0"
-  integrity sha512-nIPtBtQaea3mMXJwxSXU4YtShcl4g9bjEKBHQ2bohmxoTNAKjzW88Q+Cqn6zCf3EHx8gboSV1XOvX4aB/+KcGQ==
-  dependencies:
-    babel-runtime "^6.26.0"
-
 gatsby-react-router-scroll@^2.1.21:
   version "2.1.21"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.21.tgz#bc4aeee424da034287b6fe64d6b08f47d6cb6881"
