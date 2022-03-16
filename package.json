@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Gabe O'Leary <oleary.gabe@gmail.com>",
   "dependencies": {
+    "@splitbee/web": "^0.3.0",
     "d3-time-format": "^2.2.3",
     "disqus-react": "^1.0.8",
     "dotenv": "^8.1.0",
