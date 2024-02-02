@@ -5218,6 +5218,13 @@ gatsby-plugin-sass@^2.1.24:
     "@babel/runtime" "^7.7.6"
     sass-loader "^7.3.1"
 
+gatsby-plugin-umami@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-umami/-/gatsby-plugin-umami-0.1.5.tgz#bb23c67f060465dee02bd9513c54425030733f24"
+  integrity sha512-eeMHRIZ0LMKaUuVz7OZ3o3HlnlOLf4F4vGS6OsZw2QrI7rGBjWLm8h2hehfWlin/a1G8ydY1vOw3ucj7JX0Iig==
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-react-router-scroll@^2.1.21:
   version "2.1.21"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.21.tgz#bc4aeee424da034287b6fe64d6b08f47d6cb6881"
