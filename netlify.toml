@@ -5,5 +5,5 @@
 
 [[redirects]]
   from = "/lake-stats/*"
-  to = "https://goboard-production.up.railway.app/current-map/:splat"
+  to = "https://goboard-production.up.railway.app/lake-stats/:splat"
   status = 200
