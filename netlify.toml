@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/current/*"
+  from = "/current-map/*"
   to = "https://goboard-production.up.railway.app/current-map/:splat"
   status = 200
 
